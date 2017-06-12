@@ -1,0 +1,39 @@
+itemGroup.tabEirinisLegacy=Eirini's Legacy - Main
+itemGroup.tabEirinisLegacyMachines=Eirini's Legacy - Machines
+itemGroup.tabEirinisLegacyDecoration=Eirini's Legacy - Decoration
+
+tile.eirinislegacy.petramite.name=Petramite
+tile.eirinislegacy.animite_ore.name=Animite Ore
+tile.eirinislegacy.animite_block.name=Block of Animite
+tile.eirinislegacy.coal_imbued_block.name=Block of Imbued Coal
+tile.eirinislegacy.corpora_block.name=Block of Corpora
+tile.eirinislegacy.phantium_block.name=Block of Phantium
+tile.eirinislegacy.spectral_crystal_block.name=Block of Spectral Crystal
+
+tile.eirinislegacy.machine_casing.name=Machine Casing (WIP)
+tile.eirinislegacy.machine_casing_advanced.name=Advanced Machine Casing (WIP)
+
+item.eirinislegacy.petramite_chunk.name=Petramite Chunk
+item.eirinislegacy.petramite_receptacle.name=Petramite Receptacle
+item.eirinislegacy.petramite_rod.name=Petramite Rod
+item.eirinislegacy.animite.name=Animite
+item.eirinislegacy.coal_imbued.name=Imbued Coal
+item.eirinislegacy.corpora.name=Corpora
+item.eirinislegacy.phantium_ingot.name=Phantium Ingot
+item.eirinislegacy.phantium_nugget.name=Phantium Nugget
+item.eirinislegacy.spectral_crystal.name=Spectral Crystal
+item.eirinislegacy.spectral_residue.name=Spectral Residue
+
+item.eirinislegacy.petramite_axe.name=Petramite Axe
+item.eirinislegacy.petramite_hoe.name=Petramite Hoe
+item.eirinislegacy.petramite_pickaxe.name=Petramite Pickaxe
+item.eirinislegacy.petramite_shovel.name=Petramite Shovel
+item.eirinislegacy.petramite_sword.name=Petramite Sword
+
+item.eirinislegacy.phantium_axe.name=Phantium Axe
+item.eirinislegacy.phantium_hoe.name=Phantium Hoe
+item.eirinislegacy.phantium_pickaxe.name=Phantium Pickaxe
+item.eirinislegacy.phantium_shovel.name=Phantium Shovel
+item.eirinislegacy.phantium_sword.name=Phantium Sword
+
+item.eirinislegacy.petramite_brick.name=Petramite Brick
