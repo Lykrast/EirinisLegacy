@@ -25,8 +25,11 @@ public class CommonProxy {
         Config.readConfig();
         
 		ModBlocks.init();
+		//Tools require materials to be initialized
 		ModToolMaterials.init();
 		ModItems.init();
+		//Repair require items to be initialized
+		ModToolMaterials.init();
 	}
 
 	@EventHandler
