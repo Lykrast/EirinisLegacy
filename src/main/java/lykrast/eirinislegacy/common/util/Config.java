@@ -10,7 +10,7 @@ public class Config {
 	private static final String CATEGORY_GENERAL = "General";
 	private static final String CATEGORY_TOOLS = "Tools";
 	
-	public static boolean debug, decorationEnabled;
+	public static boolean debug, decorationEnabled, easyImbuing;
 	public static int phantiumAxeDrop, phantiumHoeDrop, phantiumPickaxeDrop, phantiumShovelDrop, phantiumSwordDrop;
 	
 	public static void readConfig() {
@@ -35,6 +35,8 @@ public class Config {
         		"Set to true to enable a lot of console output");
         decorationEnabled = cfg.getBoolean("decorationEnabled", CATEGORY_GENERAL, true, 
         		"Set to false to disable the Decoration module");
+        easyImbuing = cfg.getBoolean("easyImbuing", CATEGORY_GENERAL, true, 
+        		"Set to true to enable imbuing items by using Animite in a crafting table (not recommended if machines are enabled)");
         
         phantiumAxeDrop = cfg.getInt("phantiumAxeDrop", CATEGORY_TOOLS, 5, 0, Integer.MAX_VALUE, 
         		"1 in X chance that the Phantium Axe will drop Spectral Residue when harvesting a valid block, 0 to disable");
