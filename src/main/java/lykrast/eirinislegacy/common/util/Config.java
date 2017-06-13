@@ -10,7 +10,7 @@ public class Config {
 	private static final String CATEGORY_GENERAL = "General";
 	private static final String CATEGORY_TOOLS = "Tools";
 	
-	public static boolean debug = false, decorationEnabled = true;
+	public static boolean debug, decorationEnabled;
 	public static int phantiumAxeDrop, phantiumHoeDrop, phantiumPickaxeDrop, phantiumShovelDrop, phantiumSwordDrop;
 	
 	public static void readConfig() {
@@ -31,8 +31,10 @@ public class Config {
         cfg.addCustomCategoryComment(CATEGORY_GENERAL, "General configuration");
         cfg.addCustomCategoryComment(CATEGORY_TOOLS, "Tool configuration");
         
-        debug = cfg.getBoolean("debug", CATEGORY_GENERAL, debug, "Set to true to enable a lot of console output");
-        decorationEnabled = cfg.getBoolean("decorationEnabled", CATEGORY_GENERAL, decorationEnabled, "Set to false to disable the Decoration module");
+        debug = cfg.getBoolean("debug", CATEGORY_GENERAL, false, 
+        		"Set to true to enable a lot of console output");
+        decorationEnabled = cfg.getBoolean("decorationEnabled", CATEGORY_GENERAL, true, 
+        		"Set to false to disable the Decoration module");
         
         phantiumAxeDrop = cfg.getInt("phantiumAxeDrop", CATEGORY_TOOLS, 5, 0, Integer.MAX_VALUE, 
         		"1 in X chance that the Phantium Axe will drop Spectral Residue when harvesting a valid block, 0 to disable");
