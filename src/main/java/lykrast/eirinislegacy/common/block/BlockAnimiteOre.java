@@ -26,7 +26,7 @@ import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class BlockAnimiteOre extends BlockGeneric implements IBlockMetadata {
+public class BlockAnimiteOre extends BlockVariant {
 
 	public static final PropertyEnum VARIANT = PropertyEnum.create("variant", VariantsAnimiteOre.class);
 
@@ -34,33 +34,16 @@ public class BlockAnimiteOre extends BlockGeneric implements IBlockMetadata {
 		super(Material.ROCK, SoundType.STONE, hardness, resistance, "pickaxe", harvestLevel);
 		setDefaultState(blockState.getBaseState().withProperty(VARIANT, VariantsAnimiteOre.STONE));
 	}
-
+	
 	@Override
-	public Class getVariants() {
-		return VariantsAnimiteOre.class;
+	public Enum[] getVariants() {
+		return VariantsAnimiteOre.values();
 	}
 
-	/**
-	 * returns a list of blocks with the same ID, but different meta (eg: wood returns 4 blocks)
-	 * From Minecraft's stone block
-	 */
 	@Override
 	public void getSubBlocks(CreativeTabs tab, NonNullList<ItemStack> list) {
-		for (VariantsAnimiteOre v : VariantsAnimiteOre.values()) 
+		for (Enum v : getVariants()) 
 			list.add(new ItemStack(this, 1, getMetaFromState(blockState.getBaseState().withProperty(VARIANT, v))));
-	}
-
-	@Override
-	@SideOnly(Side.CLIENT)
-	public void initModel() {
-		for (VariantsAnimiteOre v : VariantsAnimiteOre.values()) 
-			ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), getMetaFromState(blockState.getBaseState().withProperty(VARIANT, v)), 
-					new ModelResourceLocation(getRegistryName() + "_" + v, "inventory"));
-	}
-
-	@Override
-	public int damageDropped(IBlockState state) {
-		return getMetaFromState(state);
 	}
 
 	@Override
@@ -75,9 +58,17 @@ public class BlockAnimiteOre extends BlockGeneric implements IBlockMetadata {
 
 	@Override
 	public IBlockState getStateFromMeta(int meta) {
-		return getDefaultState().withProperty(VARIANT, VariantsAnimiteOre.values()[meta]);
+		return getDefaultState().withProperty(VARIANT, getVariants()[meta]);
 	}
 
+	@Override
+	@SideOnly(Side.CLIENT)
+	public void initModel() {
+		for (Enum v : getVariants()) 
+			ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), getMetaFromState(blockState.getBaseState().withProperty(VARIANT, v)), 
+					new ModelResourceLocation(getRegistryName() + "_" + v, "inventory"));
+	}
+	
 	@Override
 	public Item getItemDropped(IBlockState state, Random rand, int fortune)
 	{

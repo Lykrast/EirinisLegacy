@@ -61,7 +61,7 @@ public class ModBlocks {
         block.setUnlocalizedName(EirinisLegacy.MODID + "." + name);
         
         GameRegistry.register(block);
-        if (block instanceof IBlockMetadata) GameRegistry.register(new ItemBlockMetadata(block), block.getRegistryName());
+        if (block instanceof BlockVariant) GameRegistry.register(new ItemBlockMetadata(block), block.getRegistryName());
         else GameRegistry.register(new ItemBlock(block), block.getRegistryName());
         
         if (tab != null) block.setCreativeTab(tab);
