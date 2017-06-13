@@ -27,7 +27,7 @@ public class ModBlocks {
 		coalImbuedBlock = registerBlock(new BlockGeneric(Material.ROCK, SoundType.STONE, 5.0F, 30.0F, "pickaxe", 0), "coal_imbued_block");
 		corporaBlock = registerBlock(new BlockGeneric(Material.GRASS, SoundType.PLANT, 0.5F, 2.5F), "corpora_block");
 		phantiumBlock = registerBlock(new BlockGeneric(Material.IRON, SoundType.METAL, 5.0F, 30.0F, "pickaxe", 2), "phantium_block");
-		spectralCrystalBlock = registerBlock(new BlockLight(Material.GLASS, SoundType.GLASS, 0.5F, 2.0F, 8.0F), "spectral_crystal_block");		
+		spectralCrystalBlock = registerBlock(new BlockLight(Material.GLASS, SoundType.GLASS, 0.5F, 2.0F, 1.0F), "spectral_crystal_block");		
 		
 		machineCasing = registerBlock(new BlockGeneric(Material.ROCK, SoundType.STONE, 1.5F, 30.0F, "pickaxe", 0), "machine_casing", CreativeTabELMachines.instance);
 		machineCasingAdvanced = registerBlock(new BlockGeneric(Material.ROCK, SoundType.STONE, 1.5F, 30.0F, "pickaxe", 0), "machine_casing_advanced", CreativeTabELMachines.instance);
