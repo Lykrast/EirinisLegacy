@@ -6,7 +6,10 @@ tile.eirinislegacy.petramite.name=Petramite
 tile.eirinislegacy.animite_ore.name=Animite Ore
 tile.eirinislegacy.animite_block.name=Block of Animite
 tile.eirinislegacy.coal_imbued_block.name=Block of Imbued Coal
+
 tile.eirinislegacy.corpora_block.name=Block of Corpora
+tile.eirinislegacy.corpora_crop.name=Corpora
+
 tile.eirinislegacy.phantium_block.name=Block of Phantium
 tile.eirinislegacy.spectral_crystal_block.name=Block of Spectral Crystal
 
@@ -18,7 +21,10 @@ item.eirinislegacy.petramite_receptacle.name=Petramite Receptacle
 item.eirinislegacy.petramite_rod.name=Petramite Rod
 item.eirinislegacy.animite.name=Animite
 item.eirinislegacy.coal_imbued.name=Imbued Coal
+
 item.eirinislegacy.corpora.name=Corpora
+item.eirinislegacy.corpora_seeds.name=Corpora Seeds
+
 item.eirinislegacy.phantium_ingot.name=Phantium Ingot
 item.eirinislegacy.phantium_nugget.name=Phantium Nugget
 item.eirinislegacy.spectral_crystal.name=Spectral Crystal

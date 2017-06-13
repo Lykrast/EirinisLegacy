@@ -70,6 +70,7 @@ public class ModRecipes {
 		// TEMPORARY Imbuing
 		RecipeHelper.addShapelessRecipe(coalImbued, animite, Items.COAL, Items.COAL);
 		RecipeHelper.addShapelessRecipe(coalImbuedBlock, animiteBlock, Blocks.COAL_BLOCK, Blocks.COAL_BLOCK);
+		RecipeHelper.addShapelessRecipe(new ItemStack(ModItems.corporaSeeds, 4), animite, Items.WHEAT_SEEDS, Items.WHEAT_SEEDS, Items.WHEAT_SEEDS, Items.WHEAT_SEEDS);
 		RecipeHelper.addShapelessRecipe(phantiumIngot, animite, Items.GOLD_INGOT);
 		RecipeHelper.addShapelessRecipe(phantiumBlock, animiteBlock, Blocks.GOLD_BLOCK);
 

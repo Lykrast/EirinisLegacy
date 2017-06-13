@@ -30,6 +30,8 @@ public class CommonProxy {
 		ModItems.init();
 		//Repair require items to be initialized
 		ModToolMaterials.init();
+		//Some blocks need items (crops)
+		ModBlocks.initAfterItems();
 	}
 
 	@EventHandler

@@ -17,7 +17,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class ModItems {
 	
 	public static Item petramiteChunk, petramiteReceptacle, petramiteRod, 
-		animite, coalImbued, corpora, 
+		animite, coalImbued, corpora, corporaSeeds, 
 		phantiumIngot, phantiumNugget, 
 		spectralResidue, spectralCrystal;
 	
@@ -36,6 +36,7 @@ public class ModItems {
 		animite = registerItem(new ItemGeneric(), "animite");
 		coalImbued = registerItem(new ItemGeneric(), "coal_imbued");
 		corpora = registerItem(new ItemFoodGeneric(3,4), "corpora");
+		corporaSeeds = registerItem(new ItemSeedCorpora(), "corpora_seeds");
 		
 		phantiumIngot = registerItem(new ItemGeneric(), "phantium_ingot");
 		phantiumNugget = registerItem(new ItemGeneric(), "phantium_nugget");
@@ -72,6 +73,7 @@ public class ModItems {
 		((ItemGeneric) animite).initModel();
 		((ItemGeneric) coalImbued).initModel();
 		((ItemFoodGeneric) corpora).initModel();
+		((ItemSeedGeneric) corporaSeeds).initModel();
 		
 		((ItemGeneric) phantiumIngot).initModel();
 		((ItemGeneric) phantiumNugget).initModel();

@@ -19,9 +19,11 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ModBlocks {
-	
-	public static BlockGeneric petramite, animiteOre, animiteBlock, coalImbuedBlock, corporaBlock, phantiumBlock, spectralCrystalBlock, machineCasing, machineCasingAdvanced;
-	
+
+	public static Block petramite, animiteOre, animiteBlock, coalImbuedBlock, corporaBlock, phantiumBlock, spectralCrystalBlock, 
+		machineCasing, machineCasingAdvanced,
+		corporaCrop;
+
 	public static void init() {
 		petramite = registerBlock(new BlockGeneric(Material.ROCK, SoundType.STONE, 1.5F, 30.0F, "pickaxe", 0), "petramite");
 		animiteOre = registerBlock(new BlockAnimiteOre(3.0F, 15.0F, 2), "animite_ore");
@@ -30,42 +32,49 @@ public class ModBlocks {
 		corporaBlock = registerBlock(new BlockGeneric(Material.GRASS, SoundType.PLANT, 0.5F, 2.5F), "corpora_block");
 		phantiumBlock = registerBlock(new BlockGeneric(Material.IRON, SoundType.METAL, 5.0F, 30.0F, "pickaxe", 2), "phantium_block");
 		spectralCrystalBlock = registerBlock(new BlockLight(Material.GLASS, SoundType.GLASS, 0.5F, 2.0F, 1.0F), "spectral_crystal_block");		
-		
+
 		machineCasing = registerBlock(new BlockGeneric(Material.ROCK, SoundType.STONE, 1.5F, 30.0F, "pickaxe", 0), "machine_casing", CreativeTabELMachines.instance);
 		machineCasingAdvanced = registerBlock(new BlockGeneric(Material.ROCK, SoundType.STONE, 1.5F, 30.0F, "pickaxe", 0), "machine_casing_advanced", CreativeTabELMachines.instance);
-    }
+	}
+
+	public static void initAfterItems()
+	{
+		corporaCrop = registerBlock(new BlockCropGeneric(ModItems.corpora, ModItems.corporaSeeds), "corpora_crop", null);
+	}
 
 	@SideOnly(Side.CLIENT)
 	public static void initModels()
 	{
-		petramite.initModel();
-		animiteOre.initModel();
-		animiteBlock.initModel();
-		coalImbuedBlock.initModel();
-		corporaBlock.initModel();
-		phantiumBlock.initModel();
-		spectralCrystalBlock.initModel();
+		((BlockGeneric) petramite).initModel();
+		((BlockGeneric) animiteOre).initModel();
+		((BlockGeneric) animiteBlock).initModel();
+		((BlockGeneric) coalImbuedBlock).initModel();
+		((BlockGeneric) corporaBlock).initModel();
+		((BlockGeneric) phantiumBlock).initModel();
+		((BlockGeneric) spectralCrystalBlock).initModel();
+
+		((BlockGeneric) machineCasing).initModel();
+		((BlockGeneric) machineCasingAdvanced).initModel();
 		
-		machineCasing.initModel();
-		machineCasingAdvanced.initModel();
+		((BlockCropGeneric) corporaCrop).initModel();
 	}
-	
-	public static BlockGeneric registerBlock(BlockGeneric block, String name)
+
+	public static Block registerBlock(Block block, String name)
 	{
 		return registerBlock(block,name,CreativeTabEL.instance);
 	}
-	
-	public static BlockGeneric registerBlock(BlockGeneric block, String name, CreativeTabs tab)
+
+	public static Block registerBlock(Block block, String name, CreativeTabs tab)
 	{
-        block.setRegistryName(name);
-        block.setUnlocalizedName(EirinisLegacy.MODID + "." + name);
-        
-        GameRegistry.register(block);
-        if (block instanceof BlockVariant) GameRegistry.register(new ItemBlockMetadata(block), block.getRegistryName());
-        else GameRegistry.register(new ItemBlock(block), block.getRegistryName());
-        
-        if (tab != null) block.setCreativeTab(tab);
-        
+		block.setRegistryName(name);
+		block.setUnlocalizedName(EirinisLegacy.MODID + "." + name);
+
+		GameRegistry.register(block);
+		if (block instanceof BlockVariant) GameRegistry.register(new ItemBlockMetadata(block), block.getRegistryName());
+		else GameRegistry.register(new ItemBlock(block), block.getRegistryName());
+
+		if (tab != null) block.setCreativeTab(tab);
+
 		return block;
 	}
 }

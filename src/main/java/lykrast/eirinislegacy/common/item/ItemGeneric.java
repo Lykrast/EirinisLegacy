@@ -9,7 +9,9 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ItemGeneric extends Item {
 	
-	public ItemGeneric() {}
+	public ItemGeneric() {
+		super();
+	}
 	
 	@SideOnly(Side.CLIENT)
     public void initModel() {

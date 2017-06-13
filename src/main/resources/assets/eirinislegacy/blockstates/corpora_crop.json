@@ -1,0 +1,50 @@
+{
+	"forge_marker": 1,
+	"defaults": {
+		"model": "crop"
+	},
+	"variants": {
+		"age": {
+			"0": {
+				"textures": {
+					"crop": "eirinislegacy:blocks/corpora_stage0"
+				}
+			},
+			"1": {
+				"textures": {
+					"crop": "eirinislegacy:blocks/corpora_stage0"
+				}
+			},
+			"2": {
+				"textures": {
+					"crop": "eirinislegacy:blocks/corpora_stage1"
+				}
+			},
+			"3": {
+				"textures": {
+					"crop": "eirinislegacy:blocks/corpora_stage1"
+				}
+			},
+			"4": {
+				"textures": {
+					"crop": "eirinislegacy:blocks/corpora_stage2"
+				}
+			},
+			"5": {
+				"textures": {
+					"crop": "eirinislegacy:blocks/corpora_stage2"
+				}
+			},
+			"6": {
+				"textures": {
+					"crop": "eirinislegacy:blocks/corpora_stage2"
+				}
+			},
+			"7": {
+				"textures": {
+					"crop": "eirinislegacy:blocks/corpora_stage3"
+				}
+			}
+		}
+	}
+}
