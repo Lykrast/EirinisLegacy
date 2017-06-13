@@ -1,6 +1,6 @@
 {
     "variants": {
-		"variant=stone": { "model": "eirinislegacy:animite_ore" },
-        "variant=petramite": { "model": "eirinislegacy:animite_ore_petramite" }
+        "variant=petramite": { "model": "eirinislegacy:animite_ore_petramite" },
+		"variant=stone": { "model": "eirinislegacy:animite_ore_stone" }
     }
 }

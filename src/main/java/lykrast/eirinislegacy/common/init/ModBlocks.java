@@ -1,6 +1,7 @@
 package lykrast.eirinislegacy.common.init;
 
 import lykrast.eirinislegacy.common.block.*;
+import lykrast.eirinislegacy.common.item.ItemBlockMetadata;
 import lykrast.eirinislegacy.common.util.Config;
 import lykrast.eirinislegacy.common.util.CreativeTabEL;
 import lykrast.eirinislegacy.common.util.CreativeTabELDecoration;
@@ -11,6 +12,7 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemBlock;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
@@ -59,7 +61,8 @@ public class ModBlocks {
         block.setUnlocalizedName(EirinisLegacy.MODID + "." + name);
         
         GameRegistry.register(block);
-        GameRegistry.register(new ItemBlock(block), block.getRegistryName());
+        if (block instanceof IBlockMetadata) GameRegistry.register(new ItemBlockMetadata(block), block.getRegistryName());
+        else GameRegistry.register(new ItemBlock(block), block.getRegistryName());
         
         if (tab != null) block.setCreativeTab(tab);
         
