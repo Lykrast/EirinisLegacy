@@ -29,7 +29,8 @@ public class ModBlocks {
 	public static Block petramite, animiteOre, animiteBlock, coalImbuedBlock, corporaBlock, phantiumBlock, spectralCrystalBlock, 
 		machineCasing, machineCasingAdvanced,
 		corporaCrop, 
-		petramiteDecoration;
+		petramiteDecoration, 
+		spectralBlock;
 	private static final List<Block> blockList = new ArrayList<Block>();
 
 	public static void init() {
@@ -43,6 +44,8 @@ public class ModBlocks {
 
 		machineCasing = registerBlock(new BlockGeneric(Material.ROCK, SoundType.STONE, 1.5F, 30.0F, "pickaxe", 0), "machine_casing", CreativeTabELMachines.instance);
 		machineCasingAdvanced = registerBlock(new BlockGeneric(Material.ROCK, SoundType.STONE, 1.5F, 30.0F, "pickaxe", 0), "machine_casing_advanced", CreativeTabELMachines.instance);
+
+		spectralBlock = registerBlock(new BlockSpectralBlock(0.25F, 1.0F), "spectral_block");
 		
 		if (Config.decorationEnabled)
 		{

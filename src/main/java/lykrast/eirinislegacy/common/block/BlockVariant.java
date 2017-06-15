@@ -1,5 +1,6 @@
 package lykrast.eirinislegacy.common.block;
 
+import lykrast.eirinislegacy.common.block.BlockAnimiteOre.VariantsAnimiteOre;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
@@ -19,6 +20,15 @@ public abstract class BlockVariant extends BlockGeneric {
 	
 	private boolean variantNames = false;
 
+	public BlockVariant(Material material, SoundType soundType, float hardness, float resistance) {
+		super(material, soundType, hardness, resistance);
+	}
+
+	public BlockVariant(Material material, SoundType soundType, float hardness, float resistance, boolean names) {
+		super(material, soundType, hardness, resistance);
+		variantNames = names;
+	}
+
 	public BlockVariant(Material material, SoundType soundType, float hardness, float resistance, String tool,
 			int harvestLevel) {
 		super(material, soundType, hardness, resistance, tool, harvestLevel);
@@ -29,12 +39,6 @@ public abstract class BlockVariant extends BlockGeneric {
 		super(material, soundType, hardness, resistance, tool, harvestLevel);
 		variantNames = names;
 	}
-
-	/**
-	 * List of the possible variants of this block, usually with yourEnum.values()
-	 * @return list of the block's variants
-	 */
-	public abstract Enum[] getVariants();
 
 	@Override
 	public int damageDropped(IBlockState state) {
@@ -47,6 +51,7 @@ public abstract class BlockVariant extends BlockGeneric {
 	}
 	
 	// Those methods needs to be redefined using your variant properties, check BlockAnimiteOre for an example
+	public abstract Enum[] getVariants();
 	
 	@Override
 	public abstract void getSubBlocks(CreativeTabs tab, NonNullList<ItemStack> list);

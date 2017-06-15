@@ -16,6 +16,8 @@ tile.eirinislegacy.spectral_crystal_block.name=Block of Spectral Crystal
 tile.eirinislegacy.machine_casing.name=Machine Casing (WIP)
 tile.eirinislegacy.machine_casing_advanced.name=Advanced Machine Casing (WIP)
 
+tile.eirinislegacy.spectral_block.name=Spectral Block
+
 tile.eirinislegacy.petramite_decoration.polished.name=Polished Petramite
 tile.eirinislegacy.petramite_decoration.tiles_big.name=Big Petramite Tiles
 tile.eirinislegacy.petramite_decoration.tiles_small.name=Small Petramite Tiles

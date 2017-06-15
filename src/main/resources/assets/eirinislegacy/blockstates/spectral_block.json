@@ -1,0 +1,35 @@
+{
+	"forge_marker": 1,
+	"defaults": {
+		"model": "cube_all"
+	},
+	"variants": {
+		"age": {
+			"0": {
+				"textures": {
+					"all": "eirinislegacy:blocks/spectral_block0"
+				}
+			},
+			"1": {
+				"textures": {
+					"all": "eirinislegacy:blocks/spectral_block1"
+				}
+			},
+			"2": {
+				"textures": {
+					"all": "eirinislegacy:blocks/spectral_block2"
+				}
+			},
+			"3": {
+				"textures": {
+					"all": "eirinislegacy:blocks/spectral_block3"
+				}
+			},
+			"4": {
+				"textures": {
+					"all": "eirinislegacy:blocks/spectral_block4"
+				}
+			}
+		}
+	}
+}
