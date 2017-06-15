@@ -11,10 +11,5 @@ public class ItemSwordGeneric extends ItemSword {
 	public ItemSwordGeneric(ToolMaterial material) {
 		super(material);
 	}
-	
-	@SideOnly(Side.CLIENT)
-    public void initModel() {
-        ModelLoader.setCustomModelResourceLocation(this, 0, new ModelResourceLocation(getRegistryName(), "inventory"));
-    }
 
 }

@@ -1,5 +1,8 @@
 package lykrast.eirinislegacy.common.init;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import lykrast.eirinislegacy.common.block.*;
 import lykrast.eirinislegacy.common.item.ItemBlockMetadata;
 import lykrast.eirinislegacy.common.util.Config;
@@ -10,10 +13,13 @@ import lykrast.eirinislegacy.core.EirinisLegacy;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -23,6 +29,7 @@ public class ModBlocks {
 	public static Block petramite, animiteOre, animiteBlock, coalImbuedBlock, corporaBlock, phantiumBlock, spectralCrystalBlock, 
 		machineCasing, machineCasingAdvanced,
 		corporaCrop;
+	private static final List<Block> blockList = new ArrayList<Block>();
 
 	public static void init() {
 		petramite = registerBlock(new BlockGeneric(Material.ROCK, SoundType.STONE, 1.5F, 30.0F, "pickaxe", 0), "petramite");
@@ -45,19 +52,14 @@ public class ModBlocks {
 	@SideOnly(Side.CLIENT)
 	public static void initModels()
 	{
-		((BlockGeneric) petramite).initModel();
-		((BlockGeneric) animiteOre).initModel();
-		((BlockGeneric) animiteBlock).initModel();
-		((BlockGeneric) coalImbuedBlock).initModel();
-		((BlockGeneric) corporaBlock).initModel();
-		((BlockGeneric) phantiumBlock).initModel();
-		((BlockGeneric) spectralCrystalBlock).initModel();
-
-		((BlockGeneric) machineCasing).initModel();
-		((BlockGeneric) machineCasingAdvanced).initModel();
-		
-		((BlockCropGeneric) corporaCrop).initModel();
+		for (Block b : blockList) initModel(b);
 	}
+	
+	@SideOnly(Side.CLIENT)
+    public static void initModel(Block b) {
+		if (b instanceof BlockVariant) ((BlockVariant) b).initModel();
+		else ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(b), 0, new ModelResourceLocation(b.getRegistryName(), "inventory"));
+    }
 
 	public static Block registerBlock(Block block, String name)
 	{
@@ -74,6 +76,8 @@ public class ModBlocks {
 		else GameRegistry.register(new ItemBlock(block), block.getRegistryName());
 
 		if (tab != null) block.setCreativeTab(tab);
+		
+		blockList.add(block);
 
 		return block;
 	}

@@ -13,11 +13,6 @@ public class ItemAxeGeneric extends ItemAxe {
 	public ItemAxeGeneric(ToolMaterial material) {
 		super(material, material.getDamageVsEntity(), material.getEfficiencyOnProperMaterial());
 	}
-
-	@SideOnly(Side.CLIENT)
-    public void initModel() {
-        ModelLoader.setCustomModelResourceLocation(this, 0, new ModelResourceLocation(getRegistryName(), "inventory"));
-    }
 	
 	@Override
 	public boolean getIsRepairable(ItemStack toRepair, ItemStack repair)

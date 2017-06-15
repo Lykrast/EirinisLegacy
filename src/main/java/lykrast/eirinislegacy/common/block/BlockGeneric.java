@@ -31,10 +31,5 @@ public class BlockGeneric extends Block {
 		this(material, soundType, hardness, resistance);
 		this.setHarvestLevel(tool, harvestLevel);
 	}
-	
-	@SideOnly(Side.CLIENT)
-    public void initModel() {
-        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), 0, new ModelResourceLocation(getRegistryName(), "inventory"));
-    }
 
 }

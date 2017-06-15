@@ -1,15 +1,20 @@
 package lykrast.eirinislegacy.common.init;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import lykrast.eirinislegacy.common.item.*;
 import lykrast.eirinislegacy.common.util.Config;
 import lykrast.eirinislegacy.common.util.CreativeTabEL;
 import lykrast.eirinislegacy.common.util.CreativeTabELDecoration;
 import lykrast.eirinislegacy.core.EirinisLegacy;
 import net.minecraft.block.Block;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -20,6 +25,7 @@ public class ModItems {
 		animite, coalImbued, corpora, corporaSeeds, 
 		phantiumIngot, phantiumNugget, 
 		spectralResidue, spectralCrystal;
+	private static final List<Item> itemList = new ArrayList<Item>();
 	
 	// Tools
 	public static Item petramiteAxe, petramiteHoe, petramitePickaxe, petramiteShovel, petramiteSword, 
@@ -66,38 +72,13 @@ public class ModItems {
 	@SideOnly(Side.CLIENT)
 	public static void initModels()
 	{
-		((ItemGeneric) petramiteChunk).initModel();
-		((ItemGeneric) petramiteReceptacle).initModel();
-		((ItemGeneric) petramiteRod).initModel();
-		
-		((ItemGeneric) animite).initModel();
-		((ItemGeneric) coalImbued).initModel();
-		((ItemFoodGeneric) corpora).initModel();
-		((ItemSeedGeneric) corporaSeeds).initModel();
-		
-		((ItemGeneric) phantiumIngot).initModel();
-		((ItemGeneric) phantiumNugget).initModel();
-		
-		((ItemGeneric) spectralResidue).initModel();
-		((ItemGeneric) spectralCrystal).initModel();
-		
-		((ItemAxeGeneric) petramiteAxe).initModel();
-		((ItemHoeGeneric) petramiteHoe).initModel();
-		((ItemPickaxeGeneric) petramitePickaxe).initModel();
-		((ItemShovelGeneric) petramiteShovel).initModel();
-		((ItemSwordGeneric) petramiteSword).initModel();
-		
-		((ItemAxeGeneric) phantiumAxe).initModel();
-		((ItemHoeGeneric) phantiumHoe).initModel();
-		((ItemPickaxeGeneric) phantiumPickaxe).initModel();
-		((ItemShovelGeneric) phantiumShovel).initModel();
-		((ItemSwordGeneric) phantiumSword).initModel();
-		
-		if (Config.decorationEnabled)
-		{
-			((ItemGeneric) petramiteBrick).initModel();
-		}
+		for (Item i : itemList) initModel(i);
 	}
+
+	@SideOnly(Side.CLIENT)
+    public static void initModel(Item i) {
+        ModelLoader.setCustomModelResourceLocation(i, 0, new ModelResourceLocation(i.getRegistryName(), "inventory"));
+    }
 	
 	public static Item registerItem(Item item, String name)
 	{
@@ -112,6 +93,8 @@ public class ModItems {
         GameRegistry.register(item);
         
         if (tab != null) item.setCreativeTab(tab);
+        
+        itemList.add(item);
         
 		return item;
 	}

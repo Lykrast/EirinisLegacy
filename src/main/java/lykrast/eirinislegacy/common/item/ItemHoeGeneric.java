@@ -11,10 +11,5 @@ public class ItemHoeGeneric extends ItemHoe {
 	public ItemHoeGeneric(ToolMaterial material) {
 		super(material);
 	}
-	
-	@SideOnly(Side.CLIENT)
-    public void initModel() {
-        ModelLoader.setCustomModelResourceLocation(this, 0, new ModelResourceLocation(getRegistryName(), "inventory"));
-    }
 
 }
