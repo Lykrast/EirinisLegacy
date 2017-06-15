@@ -16,18 +16,18 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public abstract class BlockVariant extends BlockGeneric {
-
-	public BlockVariant(Material material, SoundType soundType) {
-		super(material, soundType);
-	}
-
-	public BlockVariant(Material material, SoundType soundType, float hardness, float resistance) {
-		super(material, soundType, hardness, resistance);
-	}
+	
+	private boolean variantNames = false;
 
 	public BlockVariant(Material material, SoundType soundType, float hardness, float resistance, String tool,
 			int harvestLevel) {
 		super(material, soundType, hardness, resistance, tool, harvestLevel);
+	}
+
+	public BlockVariant(Material material, SoundType soundType, float hardness, float resistance, String tool,
+			int harvestLevel, boolean names) {
+		super(material, soundType, hardness, resistance, tool, harvestLevel);
+		variantNames = names;
 	}
 
 	/**
@@ -39,6 +39,11 @@ public abstract class BlockVariant extends BlockGeneric {
 	@Override
 	public int damageDropped(IBlockState state) {
 		return getMetaFromState(state);
+	}
+	
+	public boolean hasVariantNames()
+	{
+		return variantNames;
 	}
 	
 	// Those methods needs to be redefined using your variant properties, check BlockAnimiteOre for an example
@@ -55,7 +60,6 @@ public abstract class BlockVariant extends BlockGeneric {
 	@Override
 	public abstract IBlockState getStateFromMeta(int meta);
 
-	@Override
 	@SideOnly(Side.CLIENT)
 	public abstract void initModel();
 

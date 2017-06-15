@@ -1,0 +1,45 @@
+{
+	"forge_marker": 1,
+	"defaults": {
+		"model": "cube_all"
+	},
+	"variants": {
+		"variant": {
+			"polished": {
+				"textures": {
+					"all": "eirinislegacy:blocks/decoration/petramite_polished"
+				}
+			},
+			"tiles_big": {
+				"textures": {
+					"all": "eirinislegacy:blocks/decoration/petramite_tiles_big"
+				}
+			},
+			"tiles_small": {
+				"textures": {
+					"all": "eirinislegacy:blocks/decoration/petramite_tiles_small"
+				}
+			},
+			"bricks_big": {
+				"textures": {
+					"all": "eirinislegacy:blocks/decoration/petramite_bricks"
+				}
+			},
+			"bricks_small": {
+				"textures": {
+					"all": "eirinislegacy:blocks/decoration/petramite_bricks_small"
+				}
+			},
+			"bricks_long": {
+				"textures": {
+					"all": "eirinislegacy:blocks/decoration/petramite_bricks_long"
+				}
+			},
+			"road": {
+				"textures": {
+					"all": "eirinislegacy:blocks/decoration/petramite_road"
+				}
+			}
+		}
+	}
+}

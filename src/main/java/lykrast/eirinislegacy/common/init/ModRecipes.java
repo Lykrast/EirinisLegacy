@@ -125,6 +125,34 @@ public class ModRecipes {
 				phantiumIngot, petramiteChunk, phantiumIngot, 
 				petramiteChunk, machineCasing, petramiteChunk, 
 				phantiumIngot, petramiteChunk, phantiumIngot);
+		
+		if (Config.decorationEnabled)
+		{
+			ItemStack petramiteBrick = new ItemStack(ModItems.petramiteBrick);
+			ItemStack petramitePolished = new ItemStack(ModBlocks.petramiteDecoration, 1, 0);
+			ItemStack petramiteTilesBig = new ItemStack(ModBlocks.petramiteDecoration, 1, 1);
+			ItemStack petramiteBricksBig = new ItemStack(ModBlocks.petramiteDecoration, 1, 3);
+			ItemStack petramiteBricksSmall = new ItemStack(ModBlocks.petramiteDecoration, 1, 4);
+			
+			RecipeHelper.addShapedRecipe(new ItemStack(ModBlocks.petramiteDecoration, 4, 1), 2, 2, 
+					petramitePolished, petramitePolished, 
+					petramitePolished, petramitePolished);
+			RecipeHelper.addShapedRecipe(new ItemStack(ModBlocks.petramiteDecoration, 4, 2), 2, 2, 
+					petramiteTilesBig, petramiteTilesBig, 
+					petramiteTilesBig, petramiteTilesBig);
+			RecipeHelper.addShapedRecipe(petramiteBricksBig, 2, 2, 
+					petramiteBrick, petramiteBrick, 
+					petramiteBrick, petramiteBrick);
+			RecipeHelper.addShapedRecipe(new ItemStack(ModBlocks.petramiteDecoration, 4, 4), 2, 2, 
+					petramiteBricksBig, petramiteBricksBig, 
+					petramiteBricksBig, petramiteBricksBig);
+			RecipeHelper.addShapedRecipe(new ItemStack(ModBlocks.petramiteDecoration, 2, 5), 2, 1, 
+					petramiteBricksSmall, petramiteBricksSmall);
+			RecipeHelper.addShapedRecipe(new ItemStack(ModBlocks.petramiteDecoration, 3, 6), 3, 3, 
+					petramiteBrick, petramiteBrick, petramiteBrick, 
+					petramiteBrick, petramitePolished, petramiteBrick, 
+					petramiteBrick, petramiteBrick, petramiteBrick);
+		}
 	}
 	
 	private static void initSmelting()
@@ -134,6 +162,7 @@ public class ModRecipes {
 		if (Config.decorationEnabled)
 		{
 			GameRegistry.addSmelting(petramiteChunk, new ItemStack(ModItems.petramiteBrick), 0);
+			GameRegistry.addSmelting(petramite, new ItemStack(ModBlocks.petramiteDecoration, 1, 0), 0);
 		}
 	}
 

@@ -28,7 +28,8 @@ public class ModBlocks {
 
 	public static Block petramite, animiteOre, animiteBlock, coalImbuedBlock, corporaBlock, phantiumBlock, spectralCrystalBlock, 
 		machineCasing, machineCasingAdvanced,
-		corporaCrop;
+		corporaCrop, 
+		petramiteDecoration;
 	private static final List<Block> blockList = new ArrayList<Block>();
 
 	public static void init() {
@@ -42,6 +43,11 @@ public class ModBlocks {
 
 		machineCasing = registerBlock(new BlockGeneric(Material.ROCK, SoundType.STONE, 1.5F, 30.0F, "pickaxe", 0), "machine_casing", CreativeTabELMachines.instance);
 		machineCasingAdvanced = registerBlock(new BlockGeneric(Material.ROCK, SoundType.STONE, 1.5F, 30.0F, "pickaxe", 0), "machine_casing_advanced", CreativeTabELMachines.instance);
+		
+		if (Config.decorationEnabled)
+		{
+			petramiteDecoration = registerBlock(new BlockPetramiteDecoration(1.5F, 30.0F, 0), "petramite_decoration", CreativeTabELDecoration.instance);
+		}
 	}
 
 	public static void initAfterItems()
@@ -72,7 +78,7 @@ public class ModBlocks {
 		block.setUnlocalizedName(EirinisLegacy.MODID + "." + name);
 
 		GameRegistry.register(block);
-		if (block instanceof BlockVariant) GameRegistry.register(new ItemBlockMetadata(block), block.getRegistryName());
+		if (block instanceof BlockVariant) GameRegistry.register(new ItemBlockMetadata(block, ((BlockVariant) block).hasVariantNames()), block.getRegistryName());
 		else GameRegistry.register(new ItemBlock(block), block.getRegistryName());
 
 		if (tab != null) block.setCreativeTab(tab);

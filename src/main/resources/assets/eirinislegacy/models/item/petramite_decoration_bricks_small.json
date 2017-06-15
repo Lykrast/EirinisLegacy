@@ -1,0 +1,6 @@
+{
+	"parent": "block/cube_all",
+	"textures": { 
+		"all": "eirinislegacy:blocks/decoration/petramite_bricks_small"
+	}
+}
