@@ -24,7 +24,8 @@ public class ModItems {
 	public static Item petramiteChunk, petramiteReceptacle, petramiteRod, 
 		animite, coalImbued, corpora, corporaSeeds, 
 		phantiumIngot, phantiumNugget, 
-		spectralResidue, spectralCrystal;
+		spectralResidue, spectralCrystal, 
+		staffBase, staffBuilder;
 	private static final List<Item> itemList = new ArrayList<Item>();
 	
 	// Tools
@@ -62,6 +63,9 @@ public class ModItems {
 		phantiumPickaxe = registerItem(new ItemPickaxePhantium(ModToolMaterials.PHANTIUM), "phantium_pickaxe");
 		phantiumShovel = registerItem(new ItemShovelPhantium(ModToolMaterials.PHANTIUM), "phantium_shovel");
 		phantiumSword = registerItem(new ItemSwordPhantium(ModToolMaterials.PHANTIUM), "phantium_sword");
+		
+		staffBase = registerItem(new ItemGeneric(), "staff_base");
+		staffBuilder = registerItem(new ItemStaffBuilder(12800,100), "staff_builder");
 		
 		if (Config.decorationEnabled)
 		{

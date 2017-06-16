@@ -29,6 +29,7 @@ public class BlockSpectralBlock extends BlockGeneric {
 		super(Material.GLASS, SoundType.GLASS, hardness, resistance);
 		setTickRandomly(true);
         setLightOpacity(0);
+		setLightLevel(0.25F);
 	}
 	
 	public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand)

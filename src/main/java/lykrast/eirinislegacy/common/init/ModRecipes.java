@@ -33,6 +33,8 @@ public class ModRecipes {
 	
 	private static ItemStack machineCasing = new ItemStack(ModBlocks.machineCasing);
 	private static ItemStack machineCasingAdvanced = new ItemStack(ModBlocks.machineCasingAdvanced);
+	
+	private static ItemStack staffBase = new ItemStack(ModItems.staffBase);
 
 	public static void init()
 	{
@@ -125,6 +127,10 @@ public class ModRecipes {
 				phantiumIngot, petramiteChunk, phantiumIngot, 
 				petramiteChunk, machineCasing, petramiteChunk, 
 				phantiumIngot, petramiteChunk, phantiumIngot);
+		
+		// Staves
+		RecipeHelper.addShapedRecipe(staffBase, 1, 3, ModItems.petramiteReceptacle, spectralCrystal, petramiteRod);
+		RecipeHelper.addShapelessRecipe(new ItemStack(ModItems.staffBuilder), staffBase, petramite, Blocks.GLASS, Blocks.GLOWSTONE, Blocks.STONE);
 		
 		if (Config.decorationEnabled)
 		{
