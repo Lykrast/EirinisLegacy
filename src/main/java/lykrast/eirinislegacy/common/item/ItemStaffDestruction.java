@@ -2,8 +2,10 @@ package lykrast.eirinislegacy.common.item;
 
 import lykrast.eirinislegacy.common.init.ModBlocks;
 import net.minecraft.block.Block;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
 import net.minecraft.stats.StatList;
@@ -14,9 +16,9 @@ import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class ItemStaffBuilder extends ItemStaffGeneric {
+public class ItemStaffDestruction extends ItemStaffGeneric {
 
-	public ItemStaffBuilder(int max, int use) {
+	public ItemStaffDestruction(int max, int use) {
 		super(max, use);
 	}
 	
@@ -24,22 +26,22 @@ public class ItemStaffBuilder extends ItemStaffGeneric {
 	{
 		ItemStack itemstack = player.getHeldItem(hand);
 		if (!hasEnoughEnergy(itemstack)) return EnumActionResult.FAIL;
+
+		IBlockState state = worldIn.getBlockState(pos);
+		Block block = state.getBlock();
 		
-		Block block = worldIn.getBlockState(pos).getBlock();
-		
-		if (!block.isReplaceable(worldIn, pos)) pos = pos.offset(facing);
-		
-		if (player.canPlayerEdit(pos, facing, itemstack) && worldIn.mayPlace(ModBlocks.spectralBlock, pos, false, facing, (Entity)null))
+		if (player.canPlayerEdit(pos, facing, itemstack))
 		{
-			if (worldIn.isAirBlock(pos) || block.isReplaceable(worldIn, pos))
+			float hardness = state.getBlockHardness(worldIn, pos);
+			if (block.getHarvestLevel(state) < 3 && hardness >= 0 && hardness < Blocks.OBSIDIAN.getDefaultState().getBlockHardness(worldIn, pos))
 			{
-				worldIn.playSound(player, pos, SoundEvents.BLOCK_GLASS_PLACE, SoundCategory.BLOCKS, 1.0F, 1.0F);
+				worldIn.playEvent(2001, pos, Block.getStateId(state));
 
 		        if (!worldIn.isRemote)
 		        {
-		            worldIn.setBlockState(pos, ModBlocks.spectralBlock.getDefaultState(), 11);
+		        	worldIn.setBlockToAir(pos);
 		        }
-	            useEnergy(itemstack, player);
+	            if (hardness != 0) useEnergy(itemstack, player);
 		        player.addStat(StatList.getObjectUseStats(this));
                 return EnumActionResult.SUCCESS;
 			}
