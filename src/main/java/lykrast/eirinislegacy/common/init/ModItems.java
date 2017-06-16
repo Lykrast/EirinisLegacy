@@ -25,7 +25,7 @@ public class ModItems {
 		animite, coalImbued, corpora, corporaSeeds, 
 		phantiumIngot, phantiumNugget, 
 		spectralResidue, spectralCrystal, 
-		staffBase, staffBuilder;
+		staffBase, staffBuilder, staffFlying;
 	private static final List<Item> itemList = new ArrayList<Item>();
 	
 	// Tools
@@ -66,6 +66,7 @@ public class ModItems {
 		
 		staffBase = registerItem(new ItemGeneric(), "staff_base");
 		staffBuilder = registerItem(new ItemStaffBuilder(12800,100), "staff_builder");
+		staffFlying = registerItem(new ItemStaffFlying(6400,100), "staff_flying");
 		
 		if (Config.decorationEnabled)
 		{
