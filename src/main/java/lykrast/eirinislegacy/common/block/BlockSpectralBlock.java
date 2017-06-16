@@ -91,4 +91,10 @@ public class BlockSpectralBlock extends BlockGeneric {
         return block == this ? false : super.shouldSideBeRendered(blockState, blockAccess, pos, side);
     }
 
+    @Override
+    public boolean causesSuffocation(IBlockState state)
+    {
+        return false;
+    }
+
 }

@@ -45,7 +45,7 @@ public class ModBlocks {
 		machineCasing = registerBlock(new BlockGeneric(Material.ROCK, SoundType.STONE, 1.5F, 30.0F, "pickaxe", 0), "machine_casing", CreativeTabELMachines.instance);
 		machineCasingAdvanced = registerBlock(new BlockGeneric(Material.ROCK, SoundType.STONE, 1.5F, 30.0F, "pickaxe", 0), "machine_casing_advanced", CreativeTabELMachines.instance);
 
-		spectralBlock = registerBlock(new BlockSpectralBlock(0.25F, 1.0F), "spectral_block", null);
+		spectralBlock = registerBlock(new BlockSpectralBlock(0.10F, 0.5F), "spectral_block", null);
 		
 		if (Config.decorationEnabled)
 		{

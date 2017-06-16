@@ -1,6 +1,8 @@
 package lykrast.eirinislegacy.common.item;
 
 import lykrast.eirinislegacy.common.init.ModBlocks;
+import net.minecraft.block.Block;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
@@ -20,25 +22,27 @@ public class ItemStaffBuilder extends ItemStaffGeneric {
 	public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
 	{
 		ItemStack itemstack = player.getHeldItem(hand);
+		Block block = worldIn.getBlockState(pos).getBlock();
 		if (!hasEnoughEnergy(itemstack)) return EnumActionResult.FAIL;
 		
-		BlockPos location = pos.offset(facing);
-		if (!player.canPlayerEdit(location, facing, itemstack)) return EnumActionResult.FAIL;
-		else
+		if (!block.isReplaceable(worldIn, pos)) pos = pos.offset(facing);
+		
+		if (player.canPlayerEdit(pos, facing, itemstack) && worldIn.mayPlace(ModBlocks.spectralBlock, pos, false, facing, (Entity)null))
 		{
-			if (worldIn.isAirBlock(location))
+			if (worldIn.isAirBlock(pos) || block.isReplaceable(worldIn, pos))
 			{
-				worldIn.playSound(player, location, SoundEvents.BLOCK_GLASS_PLACE, SoundCategory.BLOCKS, 1.0F, 1.0F);
+				worldIn.playSound(player, pos, SoundEvents.BLOCK_GLASS_PLACE, SoundCategory.BLOCKS, 1.0F, 1.0F);
 
 		        if (!worldIn.isRemote)
 		        {
-		            worldIn.setBlockState(location, ModBlocks.spectralBlock.getDefaultState(), 11);
+		            worldIn.setBlockState(pos, ModBlocks.spectralBlock.getDefaultState(), 11);
 		            useEnergy(itemstack, player);
 		        }
                 return EnumActionResult.SUCCESS;
 			}
 			return EnumActionResult.PASS;
 		}
+		else return EnumActionResult.FAIL;
 	}
 
 }
