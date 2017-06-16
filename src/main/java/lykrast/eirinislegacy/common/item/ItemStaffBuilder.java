@@ -6,6 +6,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
+import net.minecraft.stats.StatList;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
@@ -38,6 +39,7 @@ public class ItemStaffBuilder extends ItemStaffGeneric {
 		            worldIn.setBlockState(pos, ModBlocks.spectralBlock.getDefaultState(), 11);
 		            useEnergy(itemstack, player);
 		        }
+		        player.addStat(StatList.getObjectUseStats(this));
                 return EnumActionResult.SUCCESS;
 			}
 			return EnumActionResult.PASS;
