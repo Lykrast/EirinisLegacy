@@ -145,25 +145,50 @@ public class ModRecipes {
 			ItemStack petramiteTilesBig = new ItemStack(ModBlocks.petramiteDecoration, 1, 1);
 			ItemStack petramiteBricksBig = new ItemStack(ModBlocks.petramiteDecoration, 1, 3);
 			ItemStack petramiteBricksSmall = new ItemStack(ModBlocks.petramiteDecoration, 1, 4);
+			ItemStack petramiteCarved = new ItemStack(ModBlocks.petramiteDecoration, 1, 8);
+			ItemStack petramiteExtruded = new ItemStack(ModBlocks.petramiteDecoration, 1, 9);
 			
+			//Big Tiles
 			RecipeHelper.addShapedRecipe(new ItemStack(ModBlocks.petramiteDecoration, 4, 1), 2, 2, 
 					petramitePolished, petramitePolished, 
 					petramitePolished, petramitePolished);
+			//Small Tiles
 			RecipeHelper.addShapedRecipe(new ItemStack(ModBlocks.petramiteDecoration, 4, 2), 2, 2, 
 					petramiteTilesBig, petramiteTilesBig, 
 					petramiteTilesBig, petramiteTilesBig);
+			//Big Bricks
 			RecipeHelper.addShapedRecipe(petramiteBricksBig, 2, 2, 
 					petramiteBrick, petramiteBrick, 
 					petramiteBrick, petramiteBrick);
+			//Small Bricks
 			RecipeHelper.addShapedRecipe(new ItemStack(ModBlocks.petramiteDecoration, 4, 4), 2, 2, 
 					petramiteBricksBig, petramiteBricksBig, 
 					petramiteBricksBig, petramiteBricksBig);
+			//Long Bricks
 			RecipeHelper.addShapedRecipe(new ItemStack(ModBlocks.petramiteDecoration, 2, 5), 2, 1, 
 					petramiteBricksSmall, petramiteBricksSmall);
+			//Road
 			RecipeHelper.addShapedRecipe(new ItemStack(ModBlocks.petramiteDecoration, 3, 6), 3, 3, 
 					petramiteBrick, petramiteBrick, petramiteBrick, 
 					petramiteBrick, petramitePolished, petramiteBrick, 
 					petramiteBrick, petramiteBrick, petramiteBrick);
+			//Pavement
+			RecipeHelper.addShapedRecipe(new ItemStack(ModBlocks.petramiteDecoration, 3, 7), 3, 3, 
+					petramiteBrick, petramiteBrick, petramiteBrick, 
+					petramiteBrick, petramiteBricksBig, petramiteBrick, 
+					petramiteBrick, petramiteBrick, petramiteBrick);
+			RecipeHelper.addShapedRecipe(new ItemStack(ModBlocks.petramiteDecoration, 3, 7), 3, 3, 
+					petramiteBrick, petramiteBrick, petramiteBrick, 
+					petramiteBrick, petramiteBricksSmall, petramiteBrick, 
+					petramiteBrick, petramiteBrick, petramiteBrick);
+			//Carved
+			RecipeHelper.addShapedRecipe(new ItemStack(ModBlocks.petramiteDecoration, 2, 8), 3, 3, 
+					petramiteBrick, petramiteBrick, petramiteBrick, 
+					petramiteBrick, null, petramiteBrick, 
+					petramiteBrick, petramiteBrick, petramiteBrick);
+			//Carved <-> Extruded
+			RecipeHelper.addShapelessRecipe(petramiteCarved, petramiteExtruded);
+			RecipeHelper.addShapelessRecipe(petramiteExtruded, petramiteCarved);
 		}
 	}
 	
@@ -174,6 +199,7 @@ public class ModRecipes {
 		if (Config.decorationEnabled)
 		{
 			GameRegistry.addSmelting(petramiteChunk, new ItemStack(ModItems.petramiteBrick), 0);
+			//Polished
 			GameRegistry.addSmelting(petramite, new ItemStack(ModBlocks.petramiteDecoration, 1, 0), 0);
 		}
 	}

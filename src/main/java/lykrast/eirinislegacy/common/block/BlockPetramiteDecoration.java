@@ -72,7 +72,7 @@ public class BlockPetramiteDecoration extends BlockVariant {
 	
 	public enum VariantsPetramiteDecoration implements IStringSerializable {
 		
-		POLISHED, TILES_BIG, TILES_SMALL, BRICKS_BIG, BRICKS_SMALL, BRICKS_LONG, ROAD;
+		POLISHED, TILES_BIG, TILES_SMALL, BRICKS_BIG, BRICKS_SMALL, BRICKS_LONG, ROAD, PAVEMENT, CARVED, EXTRUDED;
 		
 		@Override
 	    public String getName()

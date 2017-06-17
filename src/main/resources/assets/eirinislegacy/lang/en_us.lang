@@ -25,6 +25,9 @@ tile.eirinislegacy.petramite_decoration.bricks_big.name=Big Petramite Bricks
 tile.eirinislegacy.petramite_decoration.bricks_small.name=Small Petramite Bricks
 tile.eirinislegacy.petramite_decoration.bricks_long.name=Long Petramite Bricks
 tile.eirinislegacy.petramite_decoration.road.name=Petramite Road
+tile.eirinislegacy.petramite_decoration.pavement.name=Petramite Pavement
+tile.eirinislegacy.petramite_decoration.carved.name=Carved Petramite
+tile.eirinislegacy.petramite_decoration.extruded.name=Extruded Petramite
 
 item.eirinislegacy.petramite_chunk.name=Petramite Chunk
 item.eirinislegacy.petramite_receptacle.name=Petramite Receptacle

@@ -39,6 +39,21 @@
 				"textures": {
 					"all": "eirinislegacy:blocks/decoration/petramite_road"
 				}
+			},
+			"pavement": {
+				"textures": {
+					"all": "eirinislegacy:blocks/decoration/petramite_pavement"
+				}
+			},
+			"carved": {
+				"textures": {
+					"all": "eirinislegacy:blocks/decoration/petramite_carved"
+				}
+			},
+			"extruded": {
+				"textures": {
+					"all": "eirinislegacy:blocks/decoration/petramite_extruded"
+				}
 			}
 		}
 	}
