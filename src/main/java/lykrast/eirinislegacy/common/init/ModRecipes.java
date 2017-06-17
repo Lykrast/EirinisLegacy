@@ -135,7 +135,7 @@ public class ModRecipes {
 			RecipeHelper.addShapelessRecipe(new ItemStack(ModItems.staffBuilder), staffBase, petramite, Blocks.GLASS, Blocks.GLOWSTONE, Blocks.STONE);
 			RecipeHelper.addShapelessRecipe(new ItemStack(ModItems.staffDestruction), staffBase, Items.IRON_PICKAXE, Blocks.TNT, Items.LAVA_BUCKET, Blocks.CACTUS);
 			RecipeHelper.addShapelessRecipe(new ItemStack(ModItems.staffFlying), staffBase, Items.SLIME_BALL, Items.FEATHER, Items.STRING, Items.IRON_BOOTS);
-			RecipeHelper.addShapelessRecipe(new ItemStack(ModItems.staffFireball), staffBase, Items.FLINT_AND_STEEL, Items.BLAZE_POWDER, Blocks.NETHERRACK, Items.FIREWORK_CHARGE);
+			RecipeHelper.addShapelessRecipe(new ItemStack(ModItems.staffFireball), staffBase, Items.FLINT_AND_STEEL, Items.BLAZE_POWDER, Blocks.NETHERRACK, Items.COAL);
 		}
 		
 		if (Config.decorationEnabled)
