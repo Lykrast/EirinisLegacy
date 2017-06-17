@@ -31,8 +31,8 @@ public class ModRecipes {
 	private static ItemStack spectralCrystal = new ItemStack(ModItems.spectralCrystal);
 	private static ItemStack spectralCrystalBlock = new ItemStack(ModBlocks.spectralCrystalBlock);
 	
-	private static ItemStack machineCasing = new ItemStack(ModBlocks.machineCasing);
-	private static ItemStack machineCasingAdvanced = new ItemStack(ModBlocks.machineCasingAdvanced);
+	private static ItemStack machineCasing = new ItemStack(ModBlocks.machineCasing, 1, 0);
+	private static ItemStack machineCasingAdvanced = new ItemStack(ModBlocks.machineCasing, 1, 1);
 	
 	private static ItemStack staffBase = new ItemStack(ModItems.staffBase);
 

@@ -13,8 +13,8 @@ tile.eirinislegacy.corpora_crop.name=Corpora
 tile.eirinislegacy.phantium_block.name=Block of Phantium
 tile.eirinislegacy.spectral_crystal_block.name=Block of Spectral Crystal
 
-tile.eirinislegacy.machine_casing.name=Machine Casing (WIP)
-tile.eirinislegacy.machine_casing_advanced.name=Advanced Machine Casing (WIP)
+tile.eirinislegacy.machine_casing.normal.name=Machine Casing (WIP)
+tile.eirinislegacy.machine_casing.advanced.name=Advanced Machine Casing (WIP)
 
 tile.eirinislegacy.spectral_block.name=Spectral Block
 

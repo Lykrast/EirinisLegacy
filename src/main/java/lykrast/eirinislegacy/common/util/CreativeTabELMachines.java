@@ -15,7 +15,7 @@ public class CreativeTabELMachines extends CreativeTabs {
 	@Override
     public ItemStack getTabIconItem()
     {
-        return new ItemStack(ModBlocks.machineCasingAdvanced);
+        return new ItemStack(ModBlocks.machineCasing, 1, 1);
     }
 
 }

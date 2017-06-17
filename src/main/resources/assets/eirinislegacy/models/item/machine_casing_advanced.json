@@ -1,3 +1,6 @@
 {
-    "parent": "eirinislegacy:block/machine_casing_advanced"
+	"parent": "block/cube_all",
+	"textures": { 
+		"all": "eirinislegacy:blocks/machine/generic_advanced"
+	}
 }
