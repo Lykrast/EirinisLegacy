@@ -11,6 +11,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.*;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.OreIngredient;
 
 public class RecipeHelper
@@ -42,7 +43,8 @@ public class RecipeHelper
     }
 
     private static void addRecipe (IRecipe recipe) {
-        CraftingManager.func_193372_a(new ResourceLocation(EirinisLegacy.MODID, "recipe" + index++), recipe);
+    	recipe.setRegistryName(new ResourceLocation(EirinisLegacy.MODID, "recipe" + index++));
+        GameRegistry.register(recipe);
     }
 
     private static ShapedRecipes buildShapedRecipe (ItemStack output, int w, int h, Object[] input) {
