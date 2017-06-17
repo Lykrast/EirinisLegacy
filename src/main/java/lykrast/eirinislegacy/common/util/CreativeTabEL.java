@@ -1,6 +1,6 @@
 package lykrast.eirinislegacy.common.util;
 
-import lykrast.eirinislegacy.common.init.ModBlocks;
+import lykrast.eirinislegacy.common.init.ModItems;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 
@@ -15,7 +15,7 @@ public class CreativeTabEL extends CreativeTabs {
 	@Override
     public ItemStack getTabIconItem()
     {
-        return new ItemStack(ModBlocks.petramite);
+        return new ItemStack(ModItems.animite);
     }
 
 }

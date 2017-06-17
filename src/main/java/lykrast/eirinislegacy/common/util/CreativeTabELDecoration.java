@@ -16,7 +16,7 @@ public class CreativeTabELDecoration extends CreativeTabs {
 	@Override
     public ItemStack getTabIconItem()
     {
-        return new ItemStack(ModItems.petramiteBrick);
+        return new ItemStack(ModBlocks.petramiteDecoration, 1, 8);
     }
 
 }
