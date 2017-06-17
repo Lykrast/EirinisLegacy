@@ -130,9 +130,12 @@ public class ModRecipes {
 		
 		// Staves
 		RecipeHelper.addShapedRecipe(staffBase, 1, 3, ModItems.petramiteReceptacle, spectralCrystal, petramiteRod);
-		RecipeHelper.addShapelessRecipe(new ItemStack(ModItems.staffBuilder), staffBase, petramite, Blocks.GLASS, Blocks.GLOWSTONE, Blocks.STONE);
-		RecipeHelper.addShapelessRecipe(new ItemStack(ModItems.staffDestruction), staffBase, Items.IRON_PICKAXE, Blocks.TNT, Items.LAVA_BUCKET, Blocks.CACTUS);
-		RecipeHelper.addShapelessRecipe(new ItemStack(ModItems.staffFlying), staffBase, Items.SLIME_BALL, Items.FEATHER, Items.STRING, Items.IRON_BOOTS);
+		if (Config.easyAssembling)
+		{
+			RecipeHelper.addShapelessRecipe(new ItemStack(ModItems.staffBuilder), staffBase, petramite, Blocks.GLASS, Blocks.GLOWSTONE, Blocks.STONE);
+			RecipeHelper.addShapelessRecipe(new ItemStack(ModItems.staffDestruction), staffBase, Items.IRON_PICKAXE, Blocks.TNT, Items.LAVA_BUCKET, Blocks.CACTUS);
+			RecipeHelper.addShapelessRecipe(new ItemStack(ModItems.staffFlying), staffBase, Items.SLIME_BALL, Items.FEATHER, Items.STRING, Items.IRON_BOOTS);
+		}
 		
 		if (Config.decorationEnabled)
 		{
