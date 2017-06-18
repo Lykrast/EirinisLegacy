@@ -7,12 +7,14 @@ import lykrast.eirinislegacy.common.init.ModItems;
 import lykrast.eirinislegacy.common.init.ModRecipes;
 import lykrast.eirinislegacy.common.init.ModToolMaterials;
 import lykrast.eirinislegacy.common.util.Config;
+import lykrast.eirinislegacy.common.world.WorldGenOre;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class CommonProxy {
 
@@ -32,6 +34,8 @@ public class CommonProxy {
 		ModToolMaterials.init();
 		//Some blocks need items (crops)
 		ModBlocks.initAfterItems();
+		
+		GameRegistry.registerWorldGenerator(new WorldGenOre(), 0);
 	}
 
 	@EventHandler
