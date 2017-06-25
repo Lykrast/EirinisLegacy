@@ -1,0 +1,16 @@
+{
+    "conditions": [{
+        "type": "minecraft:item_exists",
+        "item": "eirinislegacy:animite"
+    }],
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "CCC",
+        "CCC",
+		"CCC"
+    ],
+    "key": {
+        "C": { "ore": "gemAnimite", "type": "forge:ore_dict" }
+    },
+    "result": { "item": "eirinislegacy:animite_block" }
+}

@@ -2,7 +2,6 @@ package lykrast.eirinislegacy.common.init;
 
 import lykrast.eirinislegacy.common.util.Config;
 import lykrast.eirinislegacy.common.util.FuelHandler;
-import lykrast.eirinislegacy.common.util.RecipeHelper;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -39,7 +38,7 @@ public class ModRecipes {
 	public static void init()
 	{
 		initOreDictionary();
-		initCrafting();
+		//initCrafting();
 		initSmelting();
 		initFuel();
 	}
@@ -47,6 +46,7 @@ public class ModRecipes {
 	private static void initOreDictionary()
 	{
 		OreDictionary.registerOre("stonePetramite", petramite);
+		OreDictionary.registerOre("stickPetramite", petramiteRod);
 		OreDictionary.registerOre("oreAnimite", animiteOre);
 		OreDictionary.registerOre("gemAnimite", animite);
 		OreDictionary.registerOre("blockAnimite", animiteBlock);
@@ -55,142 +55,30 @@ public class ModRecipes {
 		OreDictionary.registerOre("blockPhantium", phantiumBlock);
 	}
 	
-	private static void initCrafting()
-	{
-		ItemStack stick = new ItemStack(Items.STICK);
-		
-		// Compression
-		RecipeHelper.add2x2Compression(petramiteChunk, petramite);
-		RecipeHelper.add3x3Compression(animite, animiteBlock);
-		RecipeHelper.add3x3Compression(coalImbued, coalImbuedBlock);
-		RecipeHelper.add3x3Compression(new ItemStack(ModItems.corpora), new ItemStack(ModBlocks.corporaBlock));
-		RecipeHelper.add3x3Compression(phantiumIngot, phantiumBlock);
-		RecipeHelper.add3x3Compression(phantiumNugget, phantiumIngot);
-		RecipeHelper.add3x3Compression(spectralResidue, spectralCrystal);
-		RecipeHelper.add3x3Compression(spectralCrystal, spectralCrystalBlock);
-		
-		// Easy Imbuing
-		if (Config.easyImbuing)
-		{
-			RecipeHelper.addShapelessRecipe(coalImbued, animite, Items.COAL, Items.COAL);
-			RecipeHelper.addShapelessRecipe(coalImbuedBlock, animiteBlock, Blocks.COAL_BLOCK, Blocks.COAL_BLOCK);
-			RecipeHelper.addShapelessRecipe(new ItemStack(ModItems.corporaSeeds, 4), animite, Items.WHEAT_SEEDS, Items.WHEAT_SEEDS, Items.WHEAT_SEEDS, Items.WHEAT_SEEDS);
-			RecipeHelper.addShapelessRecipe(phantiumIngot, animite, Items.GOLD_INGOT);
-			RecipeHelper.addShapelessRecipe(phantiumBlock, animiteBlock, Blocks.GOLD_BLOCK);
-		}
-
-		// Petramite stuff
-		RecipeHelper.addShapedRecipe(new ItemStack(ModItems.petramiteReceptacle, 5), 3, 3, 
-				null, petramiteChunk, null, 
-				petramiteChunk, petramiteChunk, petramiteChunk, 
-				null, petramiteChunk, null);
-		RecipeHelper.addShapedRecipe(petramiteRod, 1, 2, petramiteChunk, petramiteChunk);
-		RecipeHelper.addShapedRecipe(new ItemStack(ModItems.petramiteRod, 4), 1, 2, petramite, petramite);
-		
-		// Tools
-		RecipeHelper.addShapedRecipe(new ItemStack(ModItems.petramiteAxe), 2, 3, 
-				petramite, petramite, 
-				petramite, stick, 
-				null, stick);
-		RecipeHelper.addShapedRecipe(new ItemStack(ModItems.petramiteHoe), 2, 3, 
-				petramite, petramite, 
-				null, stick, 
-				null, stick);
-		RecipeHelper.addShapedRecipe(new ItemStack(ModItems.petramitePickaxe), 3, 3, 
-				petramite, petramite, petramite, 
-				null, stick, null, 
-				null, stick, null);
-		RecipeHelper.addShapedRecipe(new ItemStack(ModItems.petramiteShovel), 1, 3, petramite, stick, stick);
-		RecipeHelper.addShapedRecipe(new ItemStack(ModItems.petramiteSword), 1, 3, petramite, petramite, stick);
-		
-		RecipeHelper.addShapedRecipe(new ItemStack(ModItems.phantiumAxe), 2, 3, 
-				phantiumIngot, phantiumIngot, 
-				phantiumIngot, petramiteRod, 
-				null, petramiteRod);
-		RecipeHelper.addShapedRecipe(new ItemStack(ModItems.phantiumHoe), 2, 3, 
-				phantiumIngot, phantiumIngot, 
-				null, petramiteRod, 
-				null, petramiteRod);
-		RecipeHelper.addShapedRecipe(new ItemStack(ModItems.phantiumPickaxe), 3, 3, 
-				phantiumIngot, phantiumIngot, phantiumIngot, 
-				null, petramiteRod, null, 
-				null, petramiteRod, null);
-		RecipeHelper.addShapedRecipe(new ItemStack(ModItems.phantiumShovel), 1, 3, phantiumIngot, petramiteRod, petramiteRod);
-		RecipeHelper.addShapedRecipe(new ItemStack(ModItems.phantiumSword), 1, 3, phantiumIngot, phantiumIngot, petramiteRod);
-
-		// Machines
-		RecipeHelper.addShapedRecipe(machineCasing, 3, 3, 
-				petramiteChunk, petramiteChunk, petramiteChunk, 
-				petramiteChunk, animite, petramiteChunk, 
-				petramiteChunk, petramiteChunk, petramiteChunk);
-		RecipeHelper.addShapedRecipe(machineCasingAdvanced, 3, 3, 
-				phantiumIngot, petramiteChunk, phantiumIngot, 
-				petramiteChunk, machineCasing, petramiteChunk, 
-				phantiumIngot, petramiteChunk, phantiumIngot);
-		
-		// Staves
-		RecipeHelper.addShapedRecipe(staffBase, 1, 3, ModItems.petramiteReceptacle, spectralCrystal, petramiteRod);
-		if (Config.easyAssembling)
-		{
-			RecipeHelper.addShapelessRecipe(new ItemStack(ModItems.staffBuilder), staffBase, petramite, Blocks.GLASS, Blocks.GLOWSTONE, Blocks.STONE);
-			RecipeHelper.addShapelessRecipe(new ItemStack(ModItems.staffDestruction), staffBase, Items.IRON_PICKAXE, Blocks.TNT, Items.LAVA_BUCKET, Blocks.CACTUS);
-			RecipeHelper.addShapelessRecipe(new ItemStack(ModItems.staffFlying), staffBase, Items.SLIME_BALL, Items.FEATHER, Items.STRING, Items.IRON_BOOTS);
-			RecipeHelper.addShapelessRecipe(new ItemStack(ModItems.staffFireball), staffBase, Items.FLINT_AND_STEEL, Items.BLAZE_POWDER, Blocks.NETHERRACK, Items.COAL);
-		}
-		
-		if (Config.decorationEnabled)
-		{
-			ItemStack petramiteBrick = new ItemStack(ModItems.petramiteBrick);
-			ItemStack petramitePolished = new ItemStack(ModBlocks.petramiteDecoration, 1, 0);
-			ItemStack petramiteTilesBig = new ItemStack(ModBlocks.petramiteDecoration, 1, 1);
-			ItemStack petramiteBricksBig = new ItemStack(ModBlocks.petramiteDecoration, 1, 3);
-			ItemStack petramiteBricksSmall = new ItemStack(ModBlocks.petramiteDecoration, 1, 4);
-			ItemStack petramiteCarved = new ItemStack(ModBlocks.petramiteDecoration, 1, 8);
-			ItemStack petramiteExtruded = new ItemStack(ModBlocks.petramiteDecoration, 1, 9);
-			
-			//Big Tiles
-			RecipeHelper.addShapedRecipe(new ItemStack(ModBlocks.petramiteDecoration, 4, 1), 2, 2, 
-					petramitePolished, petramitePolished, 
-					petramitePolished, petramitePolished);
-			//Small Tiles
-			RecipeHelper.addShapedRecipe(new ItemStack(ModBlocks.petramiteDecoration, 4, 2), 2, 2, 
-					petramiteTilesBig, petramiteTilesBig, 
-					petramiteTilesBig, petramiteTilesBig);
-			//Big Bricks
-			RecipeHelper.addShapedRecipe(petramiteBricksBig, 2, 2, 
-					petramiteBrick, petramiteBrick, 
-					petramiteBrick, petramiteBrick);
-			//Small Bricks
-			RecipeHelper.addShapedRecipe(new ItemStack(ModBlocks.petramiteDecoration, 4, 4), 2, 2, 
-					petramiteBricksBig, petramiteBricksBig, 
-					petramiteBricksBig, petramiteBricksBig);
-			//Long Bricks
-			RecipeHelper.addShapedRecipe(new ItemStack(ModBlocks.petramiteDecoration, 2, 5), 2, 1, 
-					petramiteBricksSmall, petramiteBricksSmall);
-			//Road
-			RecipeHelper.addShapedRecipe(new ItemStack(ModBlocks.petramiteDecoration, 3, 6), 3, 3, 
-					petramiteBrick, petramiteBrick, petramiteBrick, 
-					petramiteBrick, petramitePolished, petramiteBrick, 
-					petramiteBrick, petramiteBrick, petramiteBrick);
-			//Pavement
-			RecipeHelper.addShapedRecipe(new ItemStack(ModBlocks.petramiteDecoration, 3, 7), 3, 3, 
-					petramiteBrick, petramiteBrick, petramiteBrick, 
-					petramiteBrick, petramiteBricksBig, petramiteBrick, 
-					petramiteBrick, petramiteBrick, petramiteBrick);
-			RecipeHelper.addShapedRecipe(new ItemStack(ModBlocks.petramiteDecoration, 3, 7), 3, 3, 
-					petramiteBrick, petramiteBrick, petramiteBrick, 
-					petramiteBrick, petramiteBricksSmall, petramiteBrick, 
-					petramiteBrick, petramiteBrick, petramiteBrick);
-			//Carved
-			RecipeHelper.addShapedRecipe(new ItemStack(ModBlocks.petramiteDecoration, 2, 8), 3, 3, 
-					petramiteBrick, petramiteBrick, petramiteBrick, 
-					petramiteBrick, null, petramiteBrick, 
-					petramiteBrick, petramiteBrick, petramiteBrick);
-			//Carved <-> Extruded
-			RecipeHelper.addShapelessRecipe(petramiteCarved, petramiteExtruded);
-			RecipeHelper.addShapelessRecipe(petramiteExtruded, petramiteCarved);
-		}
-	}
+//	private static void initCrafting()
+//	{
+//		ItemStack stick = new ItemStack(Items.STICK);
+//		
+//		// Easy Imbuing
+//		if (Config.easyImbuing)
+//		{
+//			RecipeHelper.addShapelessRecipe(coalImbued, animite, Items.COAL, Items.COAL);
+//			RecipeHelper.addShapelessRecipe(coalImbuedBlock, animiteBlock, Blocks.COAL_BLOCK, Blocks.COAL_BLOCK);
+//			RecipeHelper.addShapelessRecipe(new ItemStack(ModItems.corporaSeeds, 4), animite, Items.WHEAT_SEEDS, Items.WHEAT_SEEDS, Items.WHEAT_SEEDS, Items.WHEAT_SEEDS);
+//			RecipeHelper.addShapelessRecipe(phantiumIngot, animite, Items.GOLD_INGOT);
+//			RecipeHelper.addShapelessRecipe(phantiumBlock, animiteBlock, Blocks.GOLD_BLOCK);
+//		}
+//		
+//		// Staves
+//		RecipeHelper.addShapedRecipe(staffBase, 1, 3, ModItems.petramiteReceptacle, spectralCrystal, petramiteRod);
+//		if (Config.easyAssembling)
+//		{
+//			RecipeHelper.addShapelessRecipe(new ItemStack(ModItems.staffBuilder), staffBase, petramite, Blocks.GLASS, Blocks.GLOWSTONE, Blocks.STONE);
+//			RecipeHelper.addShapelessRecipe(new ItemStack(ModItems.staffDestruction), staffBase, Items.IRON_PICKAXE, Blocks.TNT, Items.LAVA_BUCKET, Blocks.CACTUS);
+//			RecipeHelper.addShapelessRecipe(new ItemStack(ModItems.staffFlying), staffBase, Items.SLIME_BALL, Items.FEATHER, Items.STRING, Items.IRON_BOOTS);
+//			RecipeHelper.addShapelessRecipe(new ItemStack(ModItems.staffFireball), staffBase, Items.FLINT_AND_STEEL, Items.BLAZE_POWDER, Blocks.NETHERRACK, Items.COAL);
+//		}
+//	}
 	
 	private static void initSmelting()
 	{
@@ -198,9 +86,9 @@ public class ModRecipes {
 		
 		if (Config.decorationEnabled)
 		{
-			GameRegistry.addSmelting(petramiteChunk, new ItemStack(ModItems.petramiteBrick), 0);
+			GameRegistry.addSmelting(petramiteChunk, new ItemStack(ModItems.petramiteBrick), 0.1F);
 			//Polished
-			GameRegistry.addSmelting(petramite, new ItemStack(ModBlocks.petramiteDecoration, 1, 0), 0);
+			GameRegistry.addSmelting(petramite, new ItemStack(ModBlocks.petramiteDecoration, 1, 0), 0.1F);
 		}
 	}
 

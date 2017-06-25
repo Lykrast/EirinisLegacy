@@ -39,7 +39,7 @@ public class ItemStaffFireball extends ItemStaffGeneric {
             double accuracy = 20;
 
             EntitySmallFireball entitysmallfireball = new EntitySmallFireball(worldIn, playerIn, 
-            		vec3d.xCoord * accuracy, vec3d.yCoord * accuracy, vec3d.zCoord * accuracy);
+            		vec3d.x * accuracy, vec3d.y * accuracy, vec3d.z * accuracy);
             entitysmallfireball.posY = playerIn.posY + (double)(playerIn.height / 2.0F) + 0.5D;
             worldIn.spawnEntity(entitysmallfireball);
         }

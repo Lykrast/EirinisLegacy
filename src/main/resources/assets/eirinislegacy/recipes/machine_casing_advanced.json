@@ -1,0 +1,18 @@
+{
+    "conditions": [{
+        "type": "minecraft:item_exists",
+        "item": "eirinislegacy:machine_casing"
+    }],
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "HPH",
+        "PCP",
+        "HPH"
+    ],
+    "key": {
+        "H": { "ore": "ingotPhantium", "type": "forge:ore_dict" },
+        "P": { "ore": "stonePetramite", "type": "forge:ore_dict" },
+        "C": { "item": "eirinislegacy:machine_casing", "data": 0 }
+    },
+    "result": { "item": "eirinislegacy:machine_casing", "data": 1 }
+}

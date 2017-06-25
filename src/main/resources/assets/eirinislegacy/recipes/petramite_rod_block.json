@@ -1,0 +1,15 @@
+{
+    "conditions": [{
+        "type": "minecraft:item_exists",
+        "item": "eirinislegacy:petramite_rod"
+    }],
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "C",
+        "C"
+    ],
+    "key": {
+        "C": { "ore": "stonePetramite", "type": "forge:ore_dict" }
+    },
+    "result": { "item": "eirinislegacy:petramite_rod", "count": 4 }
+}

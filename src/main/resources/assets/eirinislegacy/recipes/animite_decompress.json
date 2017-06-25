@@ -1,0 +1,11 @@
+{
+    "conditions": [{
+        "type": "minecraft:item_exists",
+        "item": "eirinislegacy:animite"
+    }],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        { "ore": "blockAnimite", "type": "forge:ore_dict" }
+    ],
+    "result": { "item": "eirinislegacy:animite", "count": 9 }
+}

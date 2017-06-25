@@ -1,0 +1,17 @@
+{
+    "conditions": [{
+        "type": "minecraft:item_exists",
+        "item": "eirinislegacy:phantium_hoe"
+    }],
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "PP",
+        " S",
+        " S"
+    ],
+    "key": {
+        "P": { "ore": "ingotPhantium", "type": "forge:ore_dict" },
+        "S": { "ore": "stickPetramite", "type": "forge:ore_dict" }
+    },
+    "result": { "item": "eirinislegacy:phantium_hoe" }
+}

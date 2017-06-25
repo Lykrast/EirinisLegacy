@@ -1,0 +1,11 @@
+{
+    "conditions": [{
+        "type": "minecraft:item_exists",
+        "item": "eirinislegacy:coal_imbued"
+    }],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        { "item": "eirinislegacy:coal_imbued_block" }
+    ],
+    "result": { "item": "eirinislegacy:coal_imbued", "count": 9 }
+}

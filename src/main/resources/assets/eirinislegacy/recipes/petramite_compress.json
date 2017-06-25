@@ -1,0 +1,15 @@
+{
+    "conditions": [{
+        "type": "minecraft:item_exists",
+        "item": "eirinislegacy:petramite"
+    }],
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "CC",
+        "CC"
+    ],
+    "key": {
+        "C": { "item": "eirinislegacy:petramite_chunk" }
+    },
+    "result": { "item": "eirinislegacy:petramite" }
+}

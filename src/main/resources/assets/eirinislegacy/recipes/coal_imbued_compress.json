@@ -1,0 +1,16 @@
+{
+    "conditions": [{
+        "type": "minecraft:item_exists",
+        "item": "eirinislegacy:coal_imbued"
+    }],
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "CCC",
+        "CCC",
+		"CCC"
+    ],
+    "key": {
+        "C": { "item": "eirinislegacy:coal_imbued" }
+    },
+    "result": { "item": "eirinislegacy:coal_imbued_block" }
+}

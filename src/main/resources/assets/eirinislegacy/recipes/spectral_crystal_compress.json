@@ -1,0 +1,16 @@
+{
+    "conditions": [{
+        "type": "minecraft:item_exists",
+        "item": "eirinislegacy:spectral_residue"
+    }],
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "CCC",
+        "CCC",
+		"CCC"
+    ],
+    "key": {
+        "C": { "item": "eirinislegacy:spectral_crystal" }
+    },
+    "result": { "item": "eirinislegacy:spectral_crystal_block" }
+}

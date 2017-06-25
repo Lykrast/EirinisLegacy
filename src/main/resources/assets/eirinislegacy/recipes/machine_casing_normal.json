@@ -1,0 +1,17 @@
+{
+    "conditions": [{
+        "type": "minecraft:item_exists",
+        "item": "eirinislegacy:machine_casing"
+    }],
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "CCC",
+        "CAC",
+        "CCC"
+    ],
+    "key": {
+        "C": { "item": "eirinislegacy:petramite_chunk" },
+        "A": { "ore": "gemAnimite", "type": "forge:ore_dict" }
+    },
+    "result": { "item": "eirinislegacy:machine_casing", "data": 0 }
+}

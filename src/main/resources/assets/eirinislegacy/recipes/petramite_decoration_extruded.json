@@ -1,0 +1,11 @@
+{
+    "conditions": [{
+        "type": "minecraft:item_exists",
+        "item": "eirinislegacy:petramite_decoration"
+    }],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        { "item": "eirinislegacy:petramite_decoration", "data": 8 }
+    ],
+    "result": { "item": "eirinislegacy:petramite_decoration", "data": 9 }
+}

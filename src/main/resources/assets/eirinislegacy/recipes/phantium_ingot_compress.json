@@ -1,0 +1,16 @@
+{
+    "conditions": [{
+        "type": "minecraft:item_exists",
+        "item": "eirinislegacy:phantium_ingot"
+    }],
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "CCC",
+        "CCC",
+		"CCC"
+    ],
+    "key": {
+        "C": { "ore": "ingotPhantium", "type": "forge:ore_dict" }
+    },
+    "result": { "item": "eirinislegacy:phantium_block" }
+}

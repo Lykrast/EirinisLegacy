@@ -15,7 +15,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.ModelLoader;
-import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -97,7 +97,7 @@ public class ModItems {
         item.setRegistryName(name);
 		item.setUnlocalizedName(EirinisLegacy.MODID + "." + name);
         
-        GameRegistry.register(item);
+		ForgeRegistries.ITEMS.register(item);
         
         if (tab != null) item.setCreativeTab(tab);
         

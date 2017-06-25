@@ -20,7 +20,7 @@ import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.ModelLoader;
-import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -79,9 +79,20 @@ public class ModBlocks {
 		block.setRegistryName(name);
 		block.setUnlocalizedName(EirinisLegacy.MODID + "." + name);
 
-		GameRegistry.register(block);
-		if (block instanceof BlockVariant) GameRegistry.register(new ItemBlockMetadata(block, ((BlockVariant) block).hasVariantNames()), block.getRegistryName());
-		else GameRegistry.register(new ItemBlock(block), block.getRegistryName());
+		ForgeRegistries.BLOCKS.register(block);
+		
+		if (block instanceof BlockVariant)
+		{
+			ItemBlock item = new ItemBlockMetadata(block, ((BlockVariant) block).hasVariantNames());
+			item.setRegistryName(block.getRegistryName());
+			ForgeRegistries.ITEMS.register(item);
+		}
+		else
+		{
+			ItemBlock item = new ItemBlock(block);
+			item.setRegistryName(block.getRegistryName());
+			ForgeRegistries.ITEMS.register(item);
+		}
 
 		if (tab != null) block.setCreativeTab(tab);
 		

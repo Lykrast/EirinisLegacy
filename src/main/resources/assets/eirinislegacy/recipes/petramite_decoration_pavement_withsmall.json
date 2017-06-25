@@ -1,0 +1,17 @@
+{
+    "conditions": [{
+        "type": "minecraft:item_exists",
+        "item": "eirinislegacy:petramite_decoration"
+    }],
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "BBB",
+        "BPB",
+		"BBB"
+    ],
+    "key": {
+        "P": { "item": "eirinislegacy:petramite_decoration", "data": 4 },
+        "B": { "item": "eirinislegacy:petramite_brick" }
+    },
+    "result": { "item": "eirinislegacy:petramite_decoration", "data": 7, "count": 3 }
+}

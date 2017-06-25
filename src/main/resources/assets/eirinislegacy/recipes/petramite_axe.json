@@ -1,0 +1,17 @@
+{
+    "conditions": [{
+        "type": "minecraft:item_exists",
+        "item": "eirinislegacy:petramite_axe"
+    }],
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "PP",
+        "PS",
+        " S"
+    ],
+    "key": {
+        "P": { "ore": "stonePetramite", "type": "forge:ore_dict" },
+        "S": { "ore": "stickWood", "type": "forge:ore_dict" }
+    },
+    "result": { "item": "eirinislegacy:petramite_axe" }
+}
