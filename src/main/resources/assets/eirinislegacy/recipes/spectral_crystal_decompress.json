@@ -4,6 +4,7 @@
         "item": "eirinislegacy:spectral_residue"
     }],
     "type": "minecraft:crafting_shapeless",
+    "group": "spectral_crystal",
     "ingredients": [
         { "item": "eirinislegacy:spectral_crystal_block" }
     ],

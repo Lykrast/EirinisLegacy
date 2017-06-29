@@ -4,6 +4,7 @@
         "item": "eirinislegacy:petramite_decoration"
     }],
     "type": "minecraft:crafting_shaped",
+    "group": "petramite_decoration_pavement",
     "pattern": [
         "BBB",
         "BPB",

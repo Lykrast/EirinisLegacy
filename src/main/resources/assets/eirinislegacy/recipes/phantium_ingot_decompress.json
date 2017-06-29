@@ -4,6 +4,7 @@
         "item": "eirinislegacy:phantium_ingot"
     }],
     "type": "minecraft:crafting_shapeless",
+    "group": "phantium_ingot",
     "ingredients": [
         { "ore": "blockPhantium", "type": "forge:ore_dict" }
     ],

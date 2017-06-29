@@ -1,0 +1,44 @@
+{
+  "parent": "eirinislegacy:recipes/root",
+  "rewards": {
+    "recipes": [
+      "eirinislegacy:petramite_decoration_road"
+    ]
+  },
+  "criteria": {
+    "has_bricks": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "eirinislegacy:petramite_brick"
+          }
+        ]
+      }
+    },
+    "has_polished": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "eirinislegacy:petramite_decoration",
+			"data": 0
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "eirinislegacy:petramite_decoration_road"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_bricks",
+      "has_polished",
+      "has_the_recipe"
+    ]
+  ]
+}

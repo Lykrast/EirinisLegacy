@@ -1,0 +1,32 @@
+{
+  "parent": "eirinislegacy:recipes/root",
+  "rewards": {
+    "recipes": [
+      "eirinislegacy:machine_casing_normal"
+    ]
+  },
+  "criteria": {
+    "has_components": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "eirinislegacy:animite"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "eirinislegacy:machine_casing_normal"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_components",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "eirinislegacy:recipes/root",
+  "rewards": {
+    "recipes": [
+      "eirinislegacy:staff_base"
+    ]
+  },
+  "criteria": {
+    "has_components": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "eirinislegacy:spectral_residue"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "eirinislegacy:staff_base"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_components",
+      "has_the_recipe"
+    ]
+  ]
+}

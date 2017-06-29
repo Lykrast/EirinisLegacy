@@ -4,6 +4,7 @@
         "item": "eirinislegacy:petramite_rod"
     }],
     "type": "forge:ore_shaped",
+    "group": "petramite_rod",
     "pattern": [
         "C",
         "C"

@@ -1,0 +1,32 @@
+{
+  "parent": "eirinislegacy:recipes/root",
+  "rewards": {
+    "recipes": [
+      "eirinislegacy:coal_imbued_compress"
+    ]
+  },
+  "criteria": {
+    "has_components": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "eirinislegacy:coal_imbued"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "eirinislegacy:coal_imbued_compress"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_components",
+      "has_the_recipe"
+    ]
+  ]
+}

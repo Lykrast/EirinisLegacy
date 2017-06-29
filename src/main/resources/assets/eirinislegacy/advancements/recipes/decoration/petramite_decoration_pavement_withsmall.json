@@ -1,0 +1,32 @@
+{
+  "parent": "eirinislegacy:recipes/root",
+  "rewards": {
+    "recipes": [
+      "eirinislegacy:petramite_decoration_pavement_withsmall"
+    ]
+  },
+  "criteria": {
+    "has_components": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "eirinislegacy:petramite_brick"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "eirinislegacy:petramite_decoration_pavement_withsmall"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_components",
+      "has_the_recipe"
+    ]
+  ]
+}

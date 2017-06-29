@@ -4,6 +4,7 @@
         "item": "eirinislegacy:petramite_decoration"
     }],
     "type": "minecraft:crafting_shapeless",
+    "group": "petramite_decoration_carved",
     "ingredients": [
         { "item": "eirinislegacy:petramite_decoration", "data": 9 }
     ],

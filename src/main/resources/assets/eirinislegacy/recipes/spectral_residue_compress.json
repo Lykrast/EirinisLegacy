@@ -4,6 +4,7 @@
         "item": "eirinislegacy:spectral_residue"
     }],
     "type": "minecraft:crafting_shaped",
+    "group": "spectral_crystal",
     "pattern": [
         "CCC",
         "CCC",

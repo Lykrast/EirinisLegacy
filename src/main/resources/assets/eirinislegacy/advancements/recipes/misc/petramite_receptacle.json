@@ -1,0 +1,43 @@
+{
+  "parent": "eirinislegacy:recipes/root",
+  "rewards": {
+    "recipes": [
+      "eirinislegacy:petramite_receptacle"
+    ]
+  },
+  "criteria": {
+    "has_petramite": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "eirinislegacy:petramite"
+          }
+        ]
+      }
+    },
+    "has_chunks": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "eirinislegacy:petramite_chunk"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "eirinislegacy:petramite_receptacle"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_petramite",
+      "has_chunks",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -4,6 +4,7 @@
         "item": "eirinislegacy:petramite_rod"
     }],
     "type": "minecraft:crafting_shaped",
+    "group": "petramite_rod",
     "pattern": [
         "C",
         "C"
