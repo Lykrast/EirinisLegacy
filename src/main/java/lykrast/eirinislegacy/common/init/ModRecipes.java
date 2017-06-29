@@ -16,7 +16,6 @@ public class ModRecipes {
 	private static ItemStack petramiteChunk = new ItemStack(ModItems.petramiteChunk);
 	private static ItemStack petramiteRod = new ItemStack(ModItems.petramiteRod);
 	
-	private static ItemStack animiteOre = new ItemStack(ModBlocks.animiteOre);
 	private static ItemStack animite = new ItemStack(ModItems.animite);
 	private static ItemStack animiteBlock = new ItemStack(ModBlocks.animiteBlock);
 	private static ItemStack coalImbued = new ItemStack(ModItems.coalImbued);
@@ -47,7 +46,7 @@ public class ModRecipes {
 	{
 		OreDictionary.registerOre("stonePetramite", petramite);
 		OreDictionary.registerOre("stickPetramite", petramiteRod);
-		OreDictionary.registerOre("oreAnimite", animiteOre);
+		OreDictionary.registerOre("oreAnimite", ModBlocks.animiteOre);
 		OreDictionary.registerOre("gemAnimite", animite);
 		OreDictionary.registerOre("blockAnimite", animiteBlock);
 		OreDictionary.registerOre("nuggetPhantium", phantiumNugget);
@@ -70,7 +69,6 @@ public class ModRecipes {
 //		}
 //		
 //		// Staves
-//		RecipeHelper.addShapedRecipe(staffBase, 1, 3, ModItems.petramiteReceptacle, spectralCrystal, petramiteRod);
 //		if (Config.easyAssembling)
 //		{
 //			RecipeHelper.addShapelessRecipe(new ItemStack(ModItems.staffBuilder), staffBase, petramite, Blocks.GLASS, Blocks.GLOWSTONE, Blocks.STONE);
@@ -82,7 +80,7 @@ public class ModRecipes {
 	
 	private static void initSmelting()
 	{
-		GameRegistry.addSmelting(animiteOre, animite, 1.0F);
+		GameRegistry.addSmelting(ModBlocks.animiteOre, animite, 1.0F);
 		
 		if (Config.decorationEnabled)
 		{

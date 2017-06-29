@@ -1,0 +1,18 @@
+{
+    "conditions": [{
+        "type": "minecraft:item_exists",
+        "item": "eirinislegacy:staff_base"
+    }],
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "R",
+        "C",
+        "P"
+    ],
+    "key": {
+        "R": { "item": "eirinislegacy:petramite_receptacle" },
+        "C": { "item": "eirinislegacy:spectral_crystal" },
+        "P": { "ore": "stickPetramite", "type": "forge:ore_dict" }
+    },
+    "result": { "item": "eirinislegacy:staff_base" }
+}
